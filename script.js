@@ -41,20 +41,25 @@ const alphaSliderInput = document.getElementById('alphaSlider');
 function saveText(text, itemName) {
     localStorage.setItem(itemName, text);
 }
-text1Input.addEventListener('input', () => {
-    saveText(text1Input.value, 'text1');
-});
-text2Input.addEventListener('input', () => {
-    saveText(text2Input.value, 'text2');
-});
-backgroundInput.addEventListener('input', () => {
-    saveText(backgroundInput.value, 'textsBackgroundColor');
-    console.log(1);
-});
-alphaSliderInput.addEventListener('input', () => {
-    saveText(alphaSliderInput.value, 'alphaSliderInput');
-    console.log(2);
-});
+
+
+function initializeSettings() {
+    backgroundInput.style.opacity = alphaSliderInput.value;
+    text1Input.addEventListener('input', () => {
+        saveText(text1Input.value, 'text1');
+    });
+    text2Input.addEventListener('input', () => {
+        saveText(text2Input.value, 'text2');
+    });
+    backgroundInput.addEventListener('input', () => {
+        saveText(backgroundInput.value, 'textsBackgroundColor');
+        console.log(1);
+    });
+    alphaSliderInput.addEventListener('input', () => {
+        saveText(alphaSliderInput.value, 'alphaSliderInput');
+        backgroundInput.style.opacity = alphaSliderInput.value;
+    });
+}
 
 // canvas.addEventListener('mousedown', event => {
 //     const target = event.target;
@@ -72,11 +77,6 @@ document.querySelector('body').addEventListener('click', event => {
     document.querySelector('body').style.overflowY = overflowY;
 
 });
-// document.querySelector('html').addEventListener('click', event => {
-//     const target = event.target;
-//     console.log(target);
-//     // document.querySelector('html').style.overflow = 'auto';
-// });
 function displaySavedTextsAndBgcOnInput() {
     text1Input.value = localStorage.getItem('text1') != null ? localStorage.getItem('text1') : '';
     text2Input.value = localStorage.getItem('text2') != null ? localStorage.getItem('text2') : '';
@@ -748,6 +748,7 @@ settings_button.addEventListener('click', () => {
 });
 
 // Initialize the page
+initializeSettings();
 displaySavedTextsAndBgcOnInput();
 initializeCanvas();
 updatePageNavigation();
