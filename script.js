@@ -56,6 +56,22 @@ alphaSliderInput.addEventListener('input', () => {
     console.log(2);
 });
 
+canvas.addEventListener('mousedown', event => {
+    const target = event.target;
+    // if(canvas.children)
+    if ([...canvas.querySelectorAll('.image-container img')].includes(target)) {
+        console.log(target);
+        document.querySelector('html').style.overflowY = 'hidden';
+    }
+});
+canvas.addEventListener('mouseup', () => {
+    document.querySelector('html').style.overflowY = 'auto';
+});
+// document.querySelector('html').addEventListener('click', event => {
+//     const target = event.target;
+//     console.log(target);
+//     // document.querySelector('html').style.overflow = 'auto';
+// });
 function displaySavedTextsAndBgcOnInput() {
     text1Input.value = localStorage.getItem('text1') != null ? localStorage.getItem('text1') : '';
     text2Input.value = localStorage.getItem('text2') != null ? localStorage.getItem('text2') : '';

@@ -7,17 +7,30 @@
 body,
 html {
     overflow-x: hidden;
-    margin-top: 20px;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     padding: 20px;
-    overflow-x: hidden;
+}
+
+body * {
+    font-size: clamp(0.6rem, 3vw, 1rem);
+}
+
+body h1 {
+    font-size: clamp(1.1rem, 3vw, 1.7rem);
+}
+
+body h2,
+body h3,
+body h4,
+body h5 {
+    font-size: clamp(0.8rem, 3vw, 1.3rem);
 }
 
 .controls {
@@ -39,6 +52,7 @@ body {
 }
 
 .canvas {
+    overflow: hidden;
     padding: 45px;
     display: grid;
     grid-template-columns: repeat(3, 130px);
