@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Enhanced A4 Collage Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h2>Enhanced A4 Collage Tool</h2>
+  <h3>Miral Memories</h3>
+  <button id="settings_button">Settings</button>
+  <div class="controls">
+    <div class="settings">
+      <h3>Text Settings</h3>
+      <div class="settings-row">
+        <label for="instagramHandle">Instagram Handle:</label>
+        <input type="text" id="instagramHandle" value="@miral.memories_" readonly />
+      </div>
+      <div class="settings-row">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" value="050-7929634" readonly />
+      </div>
+      <div class="settings-row">
+        <label for="text1">Text Line 1:</label>
+        <input type="text" id="text1" placeholder="HAYL & HANIN" />
+      </div>
+      <div class="settings-row">
+        <label for="text2">Text Line 2:</label>
+        <input type="text" id="text2" placeholder="09 ♥ 05 ♥ 2025" />
+      </div>
+      <div class="settings-row">
+        <label for="textsBackgroundColor">Background Color:</label>
+        <div class="backgroundColorPickerContainer">
+          <input type="color" id="textsBackgroundColor" />
+          <input type="range" id="alphaSlider" min="0" max="1" step="0.01">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="pagination">
+      <button id="prevPage" disabled>Previous Page</button>
+      <span id="pageIndicator">Page 1</span>
+      <button id="nextPage" disabled>Next Page</button>
+    </div>
+  </div>
+
+  <div class="canvas-container">
+    <div class="page-indicator">Page 1 of 1</div>
+    <div class="canvas" id="canvas">
+      <!-- 9 image containers will be created dynamically -->
+    </div>
+    <input type="range" id="zoomSlider" min="50" max="300" value="100" />
+  </div>
+  <input type="file" id="fileInput" accept="image/*" multiple />
+  <div id="processingStatus" class="processing-indicator" style="display: none;"></div>
+  <div id="peopleDetectionStatus" class="people-detection-status"></div>
+  <div id="debugInfo" class="debug-info"></div>
+
+  <div id="manualOverride" class="manual-override">
+    <h4>Manual People Count Override</h4>
+    <p>Adjust the number of people detected in each image:</p>
+    <div id="imageCountList"></div>
+    <button id="applyManualCounts">Apply Changes</button>
+  </div>
+
+  <div class="button-group">
+    <button id="previewAllButton">Generate A4 Canvases</button>
+  </div>
+
+  <div id="previewContainer" class="preview-container" style="display: none;"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
