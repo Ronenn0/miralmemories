@@ -56,16 +56,21 @@ alphaSliderInput.addEventListener('input', () => {
     console.log(2);
 });
 
-canvas.addEventListener('mousedown', event => {
+// canvas.addEventListener('mousedown', event => {
+//     const target = event.target;
+//     // if(canvas.children)
+//     if ([...canvas.querySelectorAll('.image-container img')].includes(target)) {
+//         console.log(target);
+//         document.querySelector('html').style.overflowY = 'hidden';
+//         document.querySelector('body').style.overflowY = 'hidden';
+//     }
+// });
+document.querySelector('body').addEventListener('click', event => {
     const target = event.target;
-    // if(canvas.children)
-    if ([...canvas.querySelectorAll('.image-container img')].includes(target)) {
-        console.log(target);
-        document.querySelector('html').style.overflowY = 'hidden';
-    }
-});
-canvas.addEventListener('mouseup', () => {
-    document.querySelector('html').style.overflowY = 'auto';
+    const overflowY = (target == canvas || canvas.contains(target)) ? 'hidden' : 'auto';
+    document.querySelector('html').style.overflowY = overflowY;
+    document.querySelector('body').style.overflowY = overflowY;
+
 });
 // document.querySelector('html').addEventListener('click', event => {
 //     const target = event.target;
