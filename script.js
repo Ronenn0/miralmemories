@@ -514,7 +514,7 @@ function createA4Canvas(pageIndex) {
     const a4Width = 525 * 6; // A4 width in pixels (300 DPI)
     const a4Height = 742.5 * 6; // A4 height in pixels (300 DPI)
     const imageSize = 127.5 * 6; // 5.1 cm in pixels at 300 DPI
-    const gap = 47.5 * 6; // 1.9 cm in pixels at 300 DPI
+    const gap = 40 * 6; // 1.6 cm in pixels at 300 DPI
     const gap_y = 120 * 6;
 
     const totalImageSize = imageSize;
@@ -644,16 +644,16 @@ function createA4Canvas(pageIndex) {
                 ctx.strokeStyle = "#000000";
                 ctx.lineWidth = 2;
 
-                let offset_w = 3.5 / 2.54 * 300 / 2;
-                let offset_h = 2.3 / 2.54 * 300 / 2;
+                // let offset_w = 3.5 / 2.54 * 300 / 2;
+                // let offset_h = 2.3 / 2.54 * 300 / 2;
 
-                let point_x1 = dx + imageSize / 2;
-                let point_y1 = dy - gap / 2;
-                let point_y1_down = dy + imageSize + gap / 2;
+                // let point_x1 = dx + imageSize / 2;
+                // let point_y1 = dy - gap / 2;
+                // let point_y1_down = dy + imageSize + gap / 2;
                 const g = gap / 2;
                 const s = imageSize;
-                const flat = 4 / 2.54 * 300 * 6; // 4cm
-                const corner = 3 / 2.54 * 300 * 6; // 3cm
+                const flat = 3.5 / 2.54 * 300 * 6; // 3.5cm
+                const corner = 2.3 / 2.54 * 300 * 6; // 2.3cm
 
                 // === FIXED POINTS AROUND THE IMAGE ===
                 ctx.beginPath();
