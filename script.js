@@ -513,7 +513,7 @@ function createA4Canvas(pageIndex) {
 
     const a4Width = 525 * 6; // A4 width in pixels (300 DPI)
     const a4Height = 742.5 * 6; // A4 height in pixels (300 DPI)
-    const imageSize = 126.70 * 6; // 5.068 cm in pixels at 300 DPI
+    const imageSize = 127.6 * 6; // 5.14 cm in pixels at 300 DPI
     const gap = 40 * 6; // 1.6 cm in pixels at 300 DPI
     const gap_y = 120 * 6;
 
